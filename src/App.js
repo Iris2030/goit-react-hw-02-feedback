@@ -7,6 +7,7 @@ import Statistics from "./Components/Statistics/Statistics";
 import s from './Components/Section/Section.module.css'
 
 
+
 export default class App extends Component {
   state = {
     good: 0,

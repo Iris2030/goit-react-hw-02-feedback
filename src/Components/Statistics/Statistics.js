@@ -1,5 +1,5 @@
 import s from './Statistics.module.css'
-
+import PropTypes from "prop-types";
 
 export default function Statistics({good,neutral,bad,feadback, total}){
 
@@ -12,4 +12,12 @@ export default function Statistics({good,neutral,bad,feadback, total}){
     <li className={s.stats}>Positive feadback:{feadback}%</li>
     </ul>
     </div>
+}
+
+Statistics.propTypes = {
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+    feadback: PropTypes.number.isRequired,
+    total: PropTypes.number.isRequired,
 }
