@@ -8,6 +8,7 @@ import s from './Components/Section/Section.module.css'
 
 
 
+
 export default class App extends Component {
   state = {
     good: 0,
@@ -49,8 +50,14 @@ export default class App extends Component {
     return Math.round((good / this.calculetTotalFeedback()) * 100)
   }
 
+  onLeaveFeedback= (option) => {
+this.setState({
+  [option]:this.state[option] +1
+})
+  }
 
-  render() {
+
+  render() { 
     
     const {good, neutral, bad} = this.state;
     const total = this.calculetTotalFeedback()
@@ -59,9 +66,8 @@ export default class App extends Component {
       <div className={s.container}>
       <Section title="Please leave feedback">
         <FeedbackOptions
-          goodRender={this.goodIncr}
-          neutralRender={this.neutralIncr}
-          badRender={this.badIncr}
+        options={['good','neutral','bad']}
+        onLeaveFeedback={this.onLeaveFeedback}
           />
           </Section>
 
